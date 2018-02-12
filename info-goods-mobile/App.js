@@ -1,21 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator, HeaderBackButton } from 'react-navigation';
+import { AppStack } from './src/route/ApplicationRouter';
 
 export default class App extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            isLogged: false,
+        };
+    }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+          <AppStack ref={nav => { this.navigator = nav; }} />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
