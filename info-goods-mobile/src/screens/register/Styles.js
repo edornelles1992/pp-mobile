@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     },
 
     button: {
-        borderRadius: 6,
+        borderRadius: 2,
         borderWidth: 1,
         marginVertical: 12
     },
