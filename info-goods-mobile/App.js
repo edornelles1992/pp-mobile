@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator, HeaderBackButton } from 'react-navigation';
 import { AppStack } from './src/route/ApplicationRouter';
 
-export default class App extends React.Component {
+export default class App extends Component {
 
     constructor() {
         super();

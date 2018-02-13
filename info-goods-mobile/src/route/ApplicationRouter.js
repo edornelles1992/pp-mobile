@@ -1,36 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator, HeaderBackButton } from 'react-navigation';
+import Introduction from '../screens/introduction/Introduction';
+import Login from '../screens/login/Login';
+import SignUp from '../screens/register/SignUp';
 
 export const AppStack = StackNavigator({
     App: {
         screen: ({navigation}) => {
             return (
-                <View style={styles.container}>
-                    <Text style={{ textAlign: 'center', margin: 20 }}>  </Text>
-                </View>
+                <Introduction navigation = { navigation }/>
+            );
+        },
+    },
+    Login: {
+        screen: ({navigation}) => {
+            return (
+                <Login navigation = { navigation }/>
             );
         }
     },
-    // SignInStack: {
-    //     screen: SignInStackNavigator.default()
-    // },
-    // SignUpStack: {
-    //     screen: SignUpStackNavigator.default()
-    // },
-    // ChangeData: {
-    //     screen: ChangeDataScreen
-    // }
-}, {
+    SignUp: {
+        screen: ({navigation}) => {
+            return (
+                <SignUp navigation = { navigation }/>
+            );
+        }
+    }
+},{
     initialRouteName: 'App',
     headerMode: 'none'
-});
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
 });
