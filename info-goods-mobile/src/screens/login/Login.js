@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {Text, TouchableOpacity, View, TextInput} from 'react-native';
 import {styles} from './Styles';
+import UserService from '../../services/UserService';
 
 export default class Login extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            email : ''
+            email : '',
+            password : ''
         }
     }
 
@@ -28,6 +30,12 @@ export default class Login extends Component {
                 <TextInput  placeholder={"senha"}
                             underlineColorAndroid={'transparent'}
                             style = {styles.inputText}
+                            secureTextEntry = {true}
+                            onChangeText={ (text) => {
+                                this.setState({
+                                    password: text
+                                })
+                            }}
                 />
                 </View>
 
@@ -40,7 +48,12 @@ export default class Login extends Component {
         );
     }
 
-    doLogin() {
-        console.log("Fazendo Login");
+    async doLogin() {
+       await UserService.getAccessAuthorization(this.state.email,this.state.password).then(result => {
+            console.log(result);
+        }).catch(error => {
+            console.log(error);
+        })
+
     }
 }
