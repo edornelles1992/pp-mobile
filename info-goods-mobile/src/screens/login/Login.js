@@ -50,7 +50,7 @@ export default class Login extends Component {
 
     async doLogin() {
        await UserService.getAccessAuthorization(this.state.email,this.state.password).then(result => {
-            console.log(result);
+           UserService.getUser(result.headers.authorization,this.state.email,this.state.password);
         }).catch(error => {
             console.log(error);
         })
