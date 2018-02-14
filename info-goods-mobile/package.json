@@ -4,6 +4,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "expo": "^24.0.0",
+    "js-sha512": "^0.7.1",
     "react": "16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
     "react-navigation": "^1.0.3"
