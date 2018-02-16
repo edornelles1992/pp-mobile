@@ -16,7 +16,7 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style = {styles.textTitle}> Faça o Login </Text>
+                <Text style = {styles.textTitle}>Faça o Login</Text>
                 <View style = {styles.InputsContainer}>
                 <TextInput  placeholder={"e-mail"}
                             underlineColorAndroid={'transparent'}
