@@ -11,7 +11,8 @@ export const styles = StyleSheet.create({
 
     textTitle: {
         textAlign: 'center',
-        margin: 20,
+        marginTop: 40,
+        marginBottom: 20,
         fontSize: 35
     },
 
@@ -31,5 +32,25 @@ export const styles = StyleSheet.create({
     buttonContainer: {
         alignSelf: 'stretch',
         marginHorizontal: 50
+    },
+
+    inputTextContainer: {
+        alignSelf: 'stretch',
+        marginHorizontal: 40
+    },
+
+    inputText: {
+        borderBottomWidth: 1,
+        marginVertical: 4,
+        padding: 4
+
+    },
+
+    labelInput: {
+        marginTop: 10
+    },
+
+    errorMessage: {
+        color: '#FFFFFF'
     }
 });
