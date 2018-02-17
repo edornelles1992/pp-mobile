@@ -124,11 +124,13 @@ export default class ValidationUtils {
      * Check if input is a valid password string and return the error message if false
      * @param {*} value
      * @param {*} errorMessage
+     * @returns {string}
      */
     static validatePasswordString(value = '', errorMessage = ValidationUtils.IS_NON_PASSWORD_STRING) {
         if (value.length < 6) {
             return errorMessage
         }
+        return '';
     }
 
     /**
@@ -136,6 +138,7 @@ export default class ValidationUtils {
      * @param {*} value
      * @param {*} valueConfirmation
      * @param {*} errorMessage
+     * @returns {string}
      */
     static validatePasswordConfirmationString(value = '', valueConfirmation = '', errorMessage = ValidationUtils.IS_NON_PASSWORD_STRING) {
         if (valueConfirmation.length < 6) {
@@ -144,6 +147,8 @@ export default class ValidationUtils {
         if (value != valueConfirmation) {
             return ValidationUtils.IS_NON_PASSWORD_CONFIRMATION_STRING
         }
+
+        return '';
     }
 
     /**

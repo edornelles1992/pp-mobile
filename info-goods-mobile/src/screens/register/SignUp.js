@@ -143,9 +143,12 @@ export default class SignUp extends Component {
      * show error messages on incorrect filled fields
      */
     validateFields() {
+        let success = true;
+
         let message = ValidationUtils.validateFullName(this.state.name);
         if (message !== '') {
             this.setState({nameErrorMessage: message})
+            success = false;
         } else {
             this.setState({nameErrorMessage: ''})
         }
@@ -153,6 +156,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateCity(this.state.city);
         if (message !== '') {
             this.setState({cityErrorMessage: message})
+            success = false;
         } else {
             this.setState({cityErrorMessage: ''})
         }
@@ -160,6 +164,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateCountry(this.state.country);
         if (message !== '') {
             this.setState({countryErrorMessage: message})
+            success = false;
         } else {
             this.setState({countryErrorMessage: ''})
         }
@@ -167,12 +172,14 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateEmail(this.state.email);
         if (message !== '') {
             this.setState({emailErrorMessage: message})
+            success = false;
         } else {
             this.setState({emailErrorMessage: ''})
         }
         message = ValidationUtils.validateBirthdate(this.state.birthday);
         if (message !== '') {
             this.setState({birthdayErrorMessage: message})
+            success = false;
         } else {
             this.setState({birthdayErrorMessage: ''})
         }
@@ -180,6 +187,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validatePasswordString(this.state.password);
         if (message !== '') {
             this.setState({passwordErrorMessage: message})
+            success = false;
         } else {
             this.setState({passwordErrorMessage: ''})
         }
@@ -187,16 +195,22 @@ export default class SignUp extends Component {
         message = ValidationUtils.validatePasswordConfirmationString(this.state.password,this.state.confirmPassword);
         if (message !== '') {
             this.setState({confirmPasswordErrorMessage: message})
+            success = false;
         } else {
             this.setState({confirmPasswordErrorMessage: ''})
         }
+
+        return success;
     }
 
     validateEmptyFields()
     {
+        let success = true;
+
         let message = ValidationUtils.validateEmpty(this.state.name);
         if (message !== '') {
             this.setState({emptyFieldName: message})
+            success = false;
         } else {
             this.setState({emptyFieldName: ''})
         }
@@ -204,6 +218,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateEmpty(this.state.city);
         if (message !== '') {
             this.setState({emptyFieldCity: message})
+            success = false;
         } else {
             this.setState({emptyFieldCity: ''})
         }
@@ -211,6 +226,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateEmpty(this.state.country);
         if (message !== '') {
             this.setState({emptyFieldCountry: message})
+            success = false;
         } else {
             this.setState({emptyFieldCountry: ''})
         }
@@ -218,6 +234,7 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateEmpty(this.state.email);
         if (message !== '') {
             this.setState({emptyFieldEmail: message})
+            success = false;
         } else {
             this.setState({emptyFieldEmail: ''})
         }
@@ -225,9 +242,12 @@ export default class SignUp extends Component {
         message = ValidationUtils.validateEmpty(this.state.birthday);
         if (message !== '') {
             this.setState({emptyFieldBirthday: message})
+            success = false;
         } else {
             this.setState({emptyFieldBirthday: ''})
         }
+
+        return success;
     }
 
     /**
@@ -236,9 +256,13 @@ export default class SignUp extends Component {
      */
     doSignUp()
     {
-        console.log("Fazendo cadastro...");
-        this.validateEmptyFields();
-        this.validateFields();
 
+        if (this.validateEmptyFields() && this.validateFields())
+        {
+            console.log("Fazendo cadastro...");
+        } else {
+            console.log("Erro nos dados...");
+        }
+        //TODO VER MANEIRA DE BARRAR O CADASTRO CASO ALGUM CAMPO ESTEJA INCORRETO
     }
 }
