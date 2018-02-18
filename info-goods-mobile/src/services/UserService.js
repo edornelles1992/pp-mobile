@@ -5,7 +5,8 @@ const BASE = 'usuarios/';
 
 const RESOURCES = {
     LOGIN: BASE + "login",
-    GETUSER: BASE + "usuario"
+    GETUSER: BASE + "usuario",
+    SIGNUP: BASE + "sign-up"
 }
 
 const PARAMS = {
@@ -13,8 +14,20 @@ const PARAMS = {
     PASSWORD: 'senha',
 };
 
+/**
+ *  class containing all the requests to back-end related
+ *  to User services.
+ */
 export default class UserService {
 
+    /**
+     * method that cryptography the given password
+     * and send the requests with the given password and email.
+     * if requests was succeeded, return a token access.
+     * @param email
+     * @param password
+     * @returns {Promise<AxiosResponse<any>>}
+     */
     static getAccessAuthorization(email,password){
 
         password = sha512(password);
@@ -32,6 +45,14 @@ export default class UserService {
         })
     }
 
+    /**
+     * method to get user infos on database with the
+     * given email, password and security token.
+     * @param authorization
+     * @param email
+     * @param password
+     * @returns {Promise<AxiosResponse<any>>}
+     */
     static getUser(authorization, email, password) {
         const configRequest = {
             url: RESOURCES.GETUSER,
@@ -55,5 +76,41 @@ export default class UserService {
         })
 
 
+    }
+
+    /**
+     * method to sent a user register request to back-end
+     * return a message containing if was sucessfully created or not.
+     * @param name
+     * @param city
+     * @param country
+     * @param email
+     * @param birthday
+     * @param password
+     * @returns {Promise<AxiosResponse<any>>}
+     */
+    static sendRegister(name, city, country, email, birthday , password){
+        birthday =  birthday.split("/").join("-");
+        password = sha512(password);
+
+        const configRequest = {
+            url: RESOURCES.SIGNUP,
+            method: 'POST',
+            data: {
+                nome: name,
+                cidade: city,
+                estado: country,
+                email: email,
+                dataNascimento: birthday,
+                senha: password,
+            },
+        };
+
+        return axios(configRequest).then(result => {
+            return result.data.messages;
+        }).catch(error => {
+            console.log(error);
+            return false;
+        })
     }
 }

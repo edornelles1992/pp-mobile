@@ -3,6 +3,8 @@ import {Text, TouchableOpacity, View, TextInput, ScrollView} from 'react-native'
 import {styles} from './Styles';
 import {strings} from '../../assets/Strings';
 import ValidationUtils from '../../utility/ValidationUtils';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import  UserService  from '../../services/UserService'
 
 
 export default class SignUp extends Component {
@@ -40,7 +42,7 @@ export default class SignUp extends Component {
                 <Text style={styles.textTitle}>{strings.labels.doSignUp}</Text>
 
 
-                <ScrollView style={styles.inputTextContainer}>
+                <KeyboardAwareScrollView style={styles.inputTextContainer}>
                     <Text>{strings.labels.name}</Text>
                     <TextInput
                         underlineColorAndroid={'transparent'}
@@ -127,7 +129,7 @@ export default class SignUp extends Component {
                     />
                     <Text style={styles.errorMessage}>{this.state.confirmPasswordErrorMessage}{this.state.emptyFieldConfirmPassword}</Text>
 
-                </ScrollView>
+                </KeyboardAwareScrollView>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.button}
                                       onPress={() => this.doSignUp()}>
@@ -254,15 +256,31 @@ export default class SignUp extends Component {
      * method to get the informations given by the user
      * on the fields and send the signUp requests.
      */
-    doSignUp()
+    async doSignUp()
     {
-
         if (this.validateEmptyFields() && this.validateFields())
         {
             console.log("Fazendo cadastro...");
+            let message =  await UserService.sendRegister(
+                this.state.name,
+                this.state.city,
+                this.state.country,
+                this.state.email,
+                this.state.birthday,
+                this.state.password,
+                this.state.confirmPassword
+            );
+
+            if (message == false){
+                console.log("Erro Inesperado.")
+                //TODO -> VER MANEIRA DE INFORMAR AO USUARIO QUE DEU PROBLEMA NO CADASTRO
+            } else {
+                //TODO -> VER MANEIRA DE INFORMAR QUE O CADASTRO FOI CRIADO COM SUCESSO E REDIRECIONAR PARA TELA DE LOGIN
+                console.log("Cadastro criado com sucesso")
+                console.log(message)
+            }
         } else {
             console.log("Erro nos dados...");
         }
-        //TODO VER MANEIRA DE BARRAR O CADASTRO CASO ALGUM CAMPO ESTEJA INCORRETO
     }
 }
