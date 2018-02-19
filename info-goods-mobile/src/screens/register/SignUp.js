@@ -4,13 +4,15 @@ import {styles} from './Styles';
 import {strings} from '../../assets/Strings';
 import ValidationUtils from '../../utility/ValidationUtils';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import  UserService  from '../../services/UserService'
+import  UserService  from '../../services/UserService';
+import PModal from '../../components/modal/PModal';
 
 
 export default class SignUp extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             name: '',
             city: '',
@@ -33,6 +35,16 @@ export default class SignUp extends Component {
             emptyFieldBirthday: '',
             emptyFieldPassword: '',
             emptyFieldConfirmPassword: '',
+            showModal: false,
+            messageModal: '',
+            pageToNavigate: '',
+            nameField: null,
+            cityField: null,
+            countryField: null,
+            emailField: null,
+            birthdayField: null,
+            passwordField: null,
+            confirmPasswordField: null,
         }
     }
 
@@ -45,6 +57,7 @@ export default class SignUp extends Component {
                 <KeyboardAwareScrollView style={styles.inputTextContainer}>
                     <Text>{strings.labels.name}</Text>
                     <TextInput
+                        ref={input => { this.state.nameField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         onChangeText={(text) => {
@@ -57,6 +70,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.city}</Text>
                     <TextInput
+                        ref={input => { this.state.cityField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         onChangeText={(text) => {
@@ -69,6 +83,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.country}</Text>
                     <TextInput
+                        ref={input => { this.state.countryField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         onChangeText={(text) => {
@@ -81,6 +96,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.email}</Text>
                     <TextInput
+                        ref={input => { this.state.emailField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         onChangeText={(text) => {
@@ -93,6 +109,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.birthday}</Text>
                     <TextInput
+                        ref={input => { this.state.birthdayField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         onChangeText={(text) => {
@@ -105,6 +122,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.password}</Text>
                     <TextInput
+                        ref={input => { this.state.passwordField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         secureTextEntry={true}
@@ -118,6 +136,7 @@ export default class SignUp extends Component {
 
                     <Text style={styles.labelInput}>{strings.labels.confirmPassword}</Text>
                     <TextInput
+                        ref={input => { this.state.confirmPasswordField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         secureTextEntry={true}
@@ -136,6 +155,7 @@ export default class SignUp extends Component {
                         <Text style={styles.text}>{strings.labels.signUp}</Text>
                     </TouchableOpacity>
                 </View>
+                <PModal showModal={this.state.showModal} text={this.state.messageModal} navigation={this.props.navigation} pageToNavigate={this.state.pageToNavigate}/>
             </View>
         );
     }
@@ -249,6 +269,22 @@ export default class SignUp extends Component {
             this.setState({emptyFieldBirthday: ''})
         }
 
+        message = ValidationUtils.validateEmpty(this.state.password);
+        if (message !== '') {
+            this.setState({emptyFieldPassword: message})
+            success = false;
+        } else {
+            this.setState({emptyFieldPassword: ''})
+        }
+
+        message = ValidationUtils.validateEmpty(this.state.confirmPassword);
+        if (message !== '') {
+            this.setState({emptyFieldConfirmPassword: message})
+            success = false;
+        } else {
+            this.setState({emptyFieldConfirmPassword: ''})
+        }
+
         return success;
     }
 
@@ -272,15 +308,72 @@ export default class SignUp extends Component {
             );
 
             if (message == false){
-                console.log("Erro Inesperado.")
-                //TODO -> VER MANEIRA DE INFORMAR AO USUARIO QUE DEU PROBLEMA NO CADASTRO
+                this.setState({
+                    showModal: true,
+                    messageModal: 'Erro inesperado. Tente novamente.',
+                    pageToNavigate: ''
+                });
             } else {
-                //TODO -> VER MANEIRA DE INFORMAR QUE O CADASTRO FOI CRIADO COM SUCESSO E REDIRECIONAR PARA TELA DE LOGIN
-                console.log("Cadastro criado com sucesso")
-                console.log(message)
+
+                if (message[0].code === 'A002') { //case return success message
+                this.setState({
+                    showModal: true,
+                    messageModal: message[0].message,
+                    pageToNavigate: 'Login'
+                });
+                this.clearFields();
+                } else {
+                    this.setState({
+                        showModal: true,
+                        messageModal: message[0].message,
+                        pageToNavigate: ''
+                    });
+                }
             }
         } else {
+            this.setState({
+                showModal: false,
+                pageToNavigate: ''
+            });
             console.log("Erro nos dados...");
         }
+    }
+
+    /**
+     * method to clear the fields by
+     * resetting the value of the states of the class.
+     */
+    clearFields() {
+        this.setState({
+            name: '',
+            city: '',
+            country: '',
+            email: '',
+            birthday: '',
+            password: '',
+            confirmPassword: '',
+            nameErrorMessage: '',
+            cityErrorMessage: '',
+            countryErrorMessage: '',
+            emailErrorMessage: '',
+            birthdayErrorMessage: '',
+            passwordErrorMessage: '',
+            confirmPasswordErrorMessage: '',
+            emptyFieldName: '',
+            emptyFieldCity: '',
+            emptyFieldCountry: '',
+            emptyFieldEmail: '',
+            emptyFieldBirthday: '',
+            emptyFieldPassword: '',
+            emptyFieldConfirmPassword: '',
+        });
+
+        this.state.nameField.clear();
+        this.state.cityField.clear();
+        this.state.countryField.clear();
+        this.state.emailField.clear();
+        this.state.birthdayField.clear();
+        this.state.passwordField.clear();
+        this.state.confirmPasswordField.clear()
     }
 }
