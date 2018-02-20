@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 10,
         fontSize: 20,
-
     },
 
     inputText: {
@@ -45,5 +44,9 @@ export const styles = StyleSheet.create({
     InputsContainer: {
         alignSelf: 'stretch',
         marginHorizontal: 50
+    },
+
+    textError: {
+        textAlign: 'center'
     }
 });

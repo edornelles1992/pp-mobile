@@ -41,7 +41,9 @@ export default class UserService {
             //TODO -> VER COMO MOSTRAR MENSAGEM DE ERRO DE DADOS INSERIDOS
             console.log("Erro ao tentar logar");
             console.log(error);
-            return "Falha ao tentar logar";
+            if (!!error.response)
+                return error.response.data;
+            return error
         })
     }
 
@@ -67,12 +69,11 @@ export default class UserService {
         }
 
        return axios(configRequest).then(result => {
-            console.log(result.data.content.user);
-            return "Usuariou logou";
+            return result.data.content.user;
         //TODO -> GUARDAR OS DADOS DO USUARIO E NAVEGAR PARA A DASHBOARD
         }).catch(error => {
             console.log(error);
-            return "Erro ao tentar logar";
+            return error.response.data;
         })
 
 
