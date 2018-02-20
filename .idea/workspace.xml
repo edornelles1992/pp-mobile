@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be82fdb-4191-4c78-8afa-3f34b20dc99f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/info-goods-mobile/App.js" afterPath="$PROJECT_DIR$/info-goods-mobile/App.js" />
+      <change beforePath="$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js" afterPath="$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js" />
+      <change beforePath="$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js" afterPath="$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js" />
       <change beforePath="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Login.js" afterPath="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Login.js" />
-      <change beforePath="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Styles.js" afterPath="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Styles.js" />
       <change beforePath="$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js" afterPath="$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,24 +20,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationRouter.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApplicationRouter.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="49" />
+            <state relative-caret-position="90">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Strings.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -60,13 +52,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Strings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="385">
+              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/dashboard/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info-goods-mobile/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Styles.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/dashboard/Styles.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +113,20 @@
       <file leaf-file-name="UserService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="70" column="51" lean-forward="false" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+            <state relative-caret-position="476">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/utility/StorageUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -102,22 +152,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/utility/AxiosGlobal.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/introduction/Introduction.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/introduction/Styles.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/utility/Strings.js" />
-        <option value="$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/register/Styles.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/utility/GlobalStyles.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/components/PModal.js" />
-        <option value="$PROJECT_DIR$/info-goods-mobile/App.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/components/modal/PModal.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/register/SignUp.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Styles.js" />
-        <option value="$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/utility/ValidationUtils.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/dashboard/Styles.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/utility/StorageUtils.js" />
         <option value="$PROJECT_DIR$/info-goods-mobile/src/screens/login/Login.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/App.js" />
+        <option value="$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js" />
       </list>
     </option>
   </component>
@@ -137,10 +191,10 @@
     <handled-path value="$PROJECT_DIR$/info-goods-mobile/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="180" />
-    <option name="y" value="41" />
+    <option name="x" value="-65" />
+    <option name="y" value="114" />
     <option name="width" value="1916" />
-    <option name="height" value="1048" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -221,6 +275,14 @@
               <item name="info-goods-mobile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pp-mobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pp-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="info-goods-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
               <item name="introduction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,6 +331,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/info-goods-mobile/src/screens" />
       <recent name="$PROJECT_DIR$/info-goods-mobile/src/components/modal" />
       <recent name="$PROJECT_DIR$/info-goods-mobile/src/assets" />
     </key>
@@ -300,12 +363,12 @@
       <updated>1518578150514</updated>
       <workItem from="1518578151740" duration="743000" />
       <workItem from="1518814726818" duration="50057000" />
-      <workItem from="1519081123184" duration="5904000" />
+      <workItem from="1519081123184" duration="12867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56704000" />
+    <option name="totallyTimeSpent" value="63667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
@@ -415,7 +478,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="111" column="31" lean-forward="false" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -434,7 +499,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="3" selection-end-column="59" />
           <folding>
-            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -475,6 +540,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -530,47 +596,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info-goods-mobile/App.js">
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/utility/ValidationUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="343">
+          <caret line="120" column="5" lean-forward="false" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/login/Styles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="49" />
+        <state relative-caret-position="667">
+          <caret line="51" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="3" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js">
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/dashboard/Styles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="70" column="51" lean-forward="false" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="54">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -582,20 +632,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/utility/ValidationUtils.js">
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/assets/Strings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="120" column="5" lean-forward="false" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/node_modules/react-native/Libraries/react-native/react-native-implementation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/services/UserService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/utility/StorageUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/screens/login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="385">
+          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info-goods-mobile/src/route/ApplicationRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

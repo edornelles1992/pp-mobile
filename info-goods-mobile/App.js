@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {View} from 'react-native';
-import { AppStack } from './src/route/ApplicationRouter';
+import { createRootNavigator } from './src/route/ApplicationRouter';
 import { configureAxios } from './src/utility/AxiosGlobal';
+
 
 export default class App extends Component {
 
@@ -14,9 +15,10 @@ export default class App extends Component {
     }
 
     render() {
+        const Layout = createRootNavigator();
         return (
             <View  style={{ flex: 1 }}>
-                <AppStack ref={nav => { this.navigator = nav; }} />
+                <Layout ref={nav => { this.navigator = nav; }} />
             </View>
         );
     }

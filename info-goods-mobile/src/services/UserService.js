@@ -1,5 +1,6 @@
 import axios from 'axios';
 import sha512 from "js-sha512";
+import StorageUtils from '../utility/StorageUtils';
 
 const BASE = 'usuarios/';
 
@@ -35,7 +36,9 @@ export default class UserService {
         return axios.post(RESOURCES.LOGIN, {
                 [PARAMS.EMAIL]: email,
                 [PARAMS.PASSWORD]: password,
-        }).then(result => {
+        }).then(async result => {
+            StorageUtils.saveToken(result.headers.authorization);
+
             return UserService.getUser(result.headers.authorization,email,password);
         }).catch(error => {
             //TODO -> VER COMO MOSTRAR MENSAGEM DE ERRO DE DADOS INSERIDOS

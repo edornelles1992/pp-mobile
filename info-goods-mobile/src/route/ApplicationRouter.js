@@ -4,29 +4,60 @@ import Introduction from '../screens/introduction/Introduction';
 import Login from '../screens/login/Login';
 import SignUp from '../screens/register/SignUp';
 
-export const AppStack = StackNavigator({
-    App: {
-        screen: ({navigation}) => {
-            return (
-                <Introduction navigation = { navigation }/>
-            );
+/**
+ * main navigator that contain all the stacks of the application
+ * @returns {*}
+ */
+export const createRootNavigator = () => {
+    return StackNavigator({
+            SignedIn: {
+                //FIX CRIAR STACK DAS TELAS APOS LOGADO
+                screen:  createSignedOutNavigator()
+            },
+            SignedOut: {
+                screen: createSignedOutNavigator()
+            }
         },
-    },
-    Login: {
-        screen: ({navigation}) => {
-            return (
-                <Login navigation = { navigation }/>
-            );
+        {
+            headerMode: 'none',
+            initialRouteName: 'SignedOut'
         }
-    },
-    SignUp: {
-        screen: ({navigation}) => {
-            return (
-                <SignUp navigation = { navigation }/>
-            );
+    )
+};
+
+/**
+ * contain the initial route of the application (Introduction/SignUp/Login)
+ * @returns {*}
+ */
+export const createSignedOutNavigator = () => {
+    return StackNavigator({
+        Introduction: {
+            screen: ({navigation}) => {
+                return (
+                    <Introduction navigation = { navigation }/>
+                );
+            },
+        },
+        Login: {
+            screen: ({navigation}) => {
+                return (
+                    <Login navigation = { navigation }/>
+                );
+            }
+        },
+        SignUp: {
+            screen: ({navigation}) => {
+                return (
+                    <SignUp navigation = { navigation }/>
+                );
+            }
         }
-    }
-},{
-    initialRouteName: 'App',
-    headerMode: 'none'
-});
+    },{
+        initialRouteName: 'Introduction',
+        headerMode: 'none'
+    }, {
+        gestureEnabled: false
+    })
+}
+
+

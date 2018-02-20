@@ -3,7 +3,12 @@ import {Text, TouchableOpacity, View, TextInput} from 'react-native';
 import {styles} from './Styles';
 import UserService from '../../services/UserService';
 import ValidationUtils from '../../utility/ValidationUtils';
+import { strings } from '../../assets/Strings';
+import StorageUtils from "../../utility/StorageUtils";
 
+/**
+ * class of the Login screen
+ */
 export default class Login extends Component {
 
     constructor(props) {
@@ -20,7 +25,7 @@ export default class Login extends Component {
             <View style={styles.container}>
                 <Text style = {styles.textTitle}>Faça o Login</Text>
                 <View style = {styles.InputsContainer}>
-                    <TextInput  placeholder={"e-mail"}
+                    <TextInput  placeholder={strings.labels.email}
                                 underlineColorAndroid={'transparent'}
                                 style = {styles.inputText}
                                 onChangeText={ (text) => {
@@ -29,7 +34,7 @@ export default class Login extends Component {
                                     })
                                 }}
                     />
-                    <TextInput  placeholder={"senha"}
+                    <TextInput  placeholder={strings.labels.password}
                                 underlineColorAndroid={'transparent'}
                                 style = {styles.inputText}
                                 secureTextEntry = {true}
@@ -40,9 +45,9 @@ export default class Login extends Component {
                                 }}
                     />
                 </View>
-
-                <Text style = {styles.textError}>{this.state.errorMessage}</Text>
-
+                <View style = {{ marginVertical: 10}}>
+                    <Text style = {styles.textError}>{this.state.errorMessage}</Text>
+                </View>
                 <View style = {styles.buttonContainer}>
                     <TouchableOpacity style = {styles.button} onPress = {() => this.doLogin()}>
                         <Text style = {styles.text}> Entrar </Text>
@@ -68,15 +73,16 @@ export default class Login extends Component {
             this.setState({
                 errorMessage : ''
             })
-            //NAVEGAR PARA A DASHBOARD
+     //       let aa = await StorageUtils.getToken(); TESTE DE RETORNO DO TOKEN NO STORAGE
+
         } else {
             if (result.status==401) { //acesso negado
                 this.setState({
-                    errorMessage : 'Usuário inexistente ou senha inválida.'
+                    errorMessage : strings.errors.noUserFoundOrInvalidPassword
                 })
             } else { // erro de conexão
                 this.setState({
-                    errorMessage : 'Erro inesperado. Tente novamente.'
+                    errorMessage : strings.errors.genericError
                 })
             }
         }
@@ -84,12 +90,13 @@ export default class Login extends Component {
 
     /**
      * validate if the fields was filled correctly. return true if have errors
+     * and show message error to user.
      */
     validateFields() {
 
         if (!ValidationUtils.isEmail(this.state.email) || this.state.password.length < 6) {
             this.setState({
-                errorMessage : 'Usuário inexistente ou senha inválida.'
+                errorMessage : strings.errors.noUserFoundOrInvalidPassword
             })
             return true;
         }

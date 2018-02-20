@@ -1,6 +1,8 @@
 export const strings = {
 
     errors: {
+        noUserFoundOrInvalidPassword : 'Usuário inexistente ou senha inválida.',
+        genericError: 'Erro inesperado. Tente novamente.',
 
     },
 
