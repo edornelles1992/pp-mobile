@@ -14,7 +14,9 @@ export default class Dashboard extends Component {
 
     render() {
         return (
-           null
+            <View style = {{flex: 1 ,backgroundColor: 'green'}}>
+                <Text>AQUI E DASHBOARD</Text>
+            </View>
         );
     }
 

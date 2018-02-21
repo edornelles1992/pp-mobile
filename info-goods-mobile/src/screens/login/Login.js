@@ -5,6 +5,7 @@ import UserService from '../../services/UserService';
 import ValidationUtils from '../../utility/ValidationUtils';
 import { strings } from '../../assets/Strings';
 import StorageUtils from "../../utility/StorageUtils";
+import {resetActivities} from "../../utility/RouterUtility";
 
 /**
  * class of the Login screen
@@ -72,9 +73,9 @@ export default class Login extends Component {
         if (!!result.id) {
             this.setState({
                 errorMessage : ''
-            })
-     //       let aa = await StorageUtils.getToken(); TESTE DE RETORNO DO TOKEN NO STORAGE
-
+            });
+            resetActivities(this.props.navigation, 'SignedIn', null)
+         //   this.props.navigation.navigate('SignedIn');
         } else {
             if (result.status==401) { //acesso negado
                 this.setState({
@@ -100,6 +101,6 @@ export default class Login extends Component {
             })
             return true;
         }
-        return false
+        return false;
     }
 }

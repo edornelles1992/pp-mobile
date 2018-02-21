@@ -1,8 +1,9 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import {StackNavigator, TabBarBottom, TabNavigator} from 'react-navigation';
 import Introduction from '../screens/introduction/Introduction';
 import Login from '../screens/login/Login';
 import SignUp from '../screens/register/SignUp';
+import Dashboard from '../screens/dashboard/Dashboard';
 
 /**
  * main navigator that contain all the stacks of the application
@@ -11,8 +12,7 @@ import SignUp from '../screens/register/SignUp';
 export const createRootNavigator = () => {
     return StackNavigator({
             SignedIn: {
-                //FIX CRIAR STACK DAS TELAS APOS LOGADO
-                screen:  createSignedOutNavigator()
+                screen:  createSignedInStack(),
             },
             SignedOut: {
                 screen: createSignedOutNavigator()
@@ -58,6 +58,49 @@ export const createSignedOutNavigator = () => {
     }, {
         gestureEnabled: false
     })
-}
+};
+
+/**
+ * create the stack of signIn Route
+ * @returns {*}
+ */
+export const createSignedInStack = () => {
+    return StackNavigator({
+        Main: {
+            screen: createSignedInNavigator()
+        }
+    },{
+        gestureEnabled: false
+    })
+};
 
 
+/**
+ * craete the tab routes of the signIn navigation
+ * @returns {*}
+ */
+export const createSignedInNavigator = () => {
+    return TabNavigator(
+        {
+             Dashboard : { screen: Dashboard ,  navigationOptions: { headerTitle: 'Info-Goods' }},
+        },
+        {
+            tabBarOptions: {
+                style: {
+                    backgroundColor: 'red',
+                    height: 55,
+                    alignContent: 'center',
+                    justifyContent: 'center',
+                },
+                showIcon: true,
+                showLabel: false,
+            },
+            backBehavior: false,
+            lazy: true,
+            tabBarComponent: TabBarBottom,
+            swipeEnabled: false,
+            tabBarPosition: 'bottom',
+            initialRouteName: 'Dashboard',
+        }
+    );
+};
