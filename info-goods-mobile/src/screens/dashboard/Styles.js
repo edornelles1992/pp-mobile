@@ -5,5 +5,11 @@ export const styles = StyleSheet.create({
     mainContainer: {
         flex: 1 ,
         backgroundColor: DefaultColors.white
+    },
+
+    title: {
+        textAlign: 'center',
+        marginVertical: 20,
+        fontSize: 22
     }
 });

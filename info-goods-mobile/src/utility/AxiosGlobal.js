@@ -15,7 +15,7 @@ const BASE_URL = SERVER_URLS.EDUARDO;
  */
 export const configureAxios = (AUTH_TOKEN) => {
     Axios.defaults.baseURL = BASE_URL;
-    if (AUTH_TOKEN)
+    if (AUTH_TOKEN !== null)
         Axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
     Axios.defaults.headers.post['Content-Type'] = 'application/json';
 };;
