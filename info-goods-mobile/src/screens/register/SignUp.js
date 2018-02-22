@@ -60,6 +60,8 @@ export default class SignUp extends Component {
                         ref={input => { this.state.nameField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
+                        autoCapitalize = 'sentences'
+                        maxLength = {50}
                         onChangeText={(text) => {
                             this.setState({
                                 name: text
@@ -73,6 +75,8 @@ export default class SignUp extends Component {
                         ref={input => { this.state.cityField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
+                        maxLength = {50}
+                        autoCapitalize = 'sentences'
                         onChangeText={(text) => {
                             this.setState({
                                 city: text
@@ -86,6 +90,8 @@ export default class SignUp extends Component {
                         ref={input => { this.state.countryField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
+                        maxLength = {50}
+                        autoCapitalize = 'sentences'
                         onChangeText={(text) => {
                             this.setState({
                                 country: text
@@ -99,6 +105,8 @@ export default class SignUp extends Component {
                         ref={input => { this.state.emailField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
+                        maxLength = {50}
+                        autoCapitalize = 'none'
                         onChangeText={(text) => {
                             this.setState({
                                 email: text
@@ -112,6 +120,7 @@ export default class SignUp extends Component {
                         ref={input => { this.state.birthdayField = input }}
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
+                        maxLength = {20}
                         onChangeText={(text) => {
                             this.setState({
                                 birthday: text
@@ -126,6 +135,7 @@ export default class SignUp extends Component {
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         secureTextEntry={true}
+                        maxLength = {20}
                         onChangeText={(text) => {
                             this.setState({
                                 password: text
@@ -140,6 +150,7 @@ export default class SignUp extends Component {
                         underlineColorAndroid={'transparent'}
                         style={styles.inputText}
                         secureTextEntry={true}
+                        maxLength = {20}
                         onChangeText={(text) => {
                             this.setState({
                                 confirmPassword: text

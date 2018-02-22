@@ -4,6 +4,8 @@ import Introduction from '../screens/introduction/Introduction';
 import Login from '../screens/login/Login';
 import SignUp from '../screens/register/SignUp';
 import Dashboard from '../screens/dashboard/Dashboard';
+import {DefaultColors} from '../utility/GlobalStyles';
+
 
 /**
  * main navigator that contain all the stacks of the application
@@ -82,12 +84,12 @@ export const createSignedInStack = () => {
 export const createSignedInNavigator = () => {
     return TabNavigator(
         {
-             Dashboard : { screen: Dashboard ,  navigationOptions: { headerTitle: 'Info-Goods' }},
+             Dashboard : { screen: Dashboard ,  navigationOptions: { headerTitle: 'Info-Goods' , headerStyle: { backgroundColor: DefaultColors.lightBlue }}},
         },
         {
             tabBarOptions: {
                 style: {
-                    backgroundColor: 'red',
+                    backgroundColor: DefaultColors.lightBlue,
                     height: 55,
                     alignContent: 'center',
                     justifyContent: 'center',

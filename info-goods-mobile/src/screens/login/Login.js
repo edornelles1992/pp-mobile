@@ -29,6 +29,7 @@ export default class Login extends Component {
                     <TextInput  placeholder={strings.labels.email}
                                 underlineColorAndroid={'transparent'}
                                 style = {styles.inputText}
+                                autoCapitalize = 'none'
                                 onChangeText={ (text) => {
                                     this.setState({
                                         email: text
