@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, FlatList} from 'react-native';
+import {Text, View, FlatList, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
 import PostingService from '../../services/PostingService'
 /**
@@ -25,23 +25,39 @@ export default class Dashboard extends Component {
                 <View style={styles.mainContainer}/>
             );
         } else {
-
+            //TODO FALTA DESMOCAR A IMAGEM PASSANDO UM BASE64 SALVO NO BANCO
             return (
                 <View style={styles.mainContainer}>
-                    <Text style={styles.title}>Produtos em Alta</Text>
+                    <Text style={styles.title}>Postagens em Alta</Text>
                     <FlatList
                         keyboardShouldPersistTaps={'always'}
                         data={this.state.postings}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => (
-                            <View>
-                                <Text>{item.id}</Text>
-                            </View>
+                            <TouchableOpacity style = {styles.cardContainer}>
+                                <Image height = {30} resizeMode = {'contain'} style={styles.image} source={require('../../../assets/images/notebook.jpg')}/>
+                                <View style = { styles.descriptionContainer}>
+                                    <View style = { styles.titleContainer}>
+                                        <Text style = { styles.cardTitle }>{item.produto.nome}</Text>
+                                    </View>
+                                    <View style = { styles.nameContainer }>
+                                        <Text style = { styles.name }>{item.user.nome}</Text>
+                                    </View>
+                                    <View style = { styles.noteAndLikeContainer }>
+                                        <View style = { styles.notaContainer}>
+                                            <Text style = { styles.nota }>{item.produto.nota}</Text>
+                                        </View>
+                                        <View style = { styles.likeContainer}>
+                                            <Text style = { styles.likes }>{item.curtidas} likes</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         )}
                     />
                 </View>
             );
-         }
+        }
     }
 
     /**
