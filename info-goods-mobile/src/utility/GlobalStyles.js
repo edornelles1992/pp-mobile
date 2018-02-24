@@ -8,4 +8,5 @@ export const DefaultColors = {
     black: '#000000',
     white: '#FFFFFF',
     yellow: '#FDD835',
+    gray: '#607D8B',
 }

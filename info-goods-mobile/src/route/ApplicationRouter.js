@@ -6,7 +6,7 @@ import SignUp from '../screens/register/SignUp';
 import Dashboard from '../screens/dashboard/Dashboard';
 import {DefaultColors} from '../utility/GlobalStyles';
 import { Text } from 'react-native';
-import { EvilIcons, FontAwesome } from '@expo/vector-icons';
+import { EvilIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
 
 
 /**
@@ -91,8 +91,8 @@ export const createSignedInNavigator = () => {
                  navigationOptions: {
                      tabBarIcon: ({ focused }) => (
                          focused //TODO AJUSTAR PARA MOSTRAR ICONE DA TAB
-                             ? <Text>Dashboard</Text>
-                             : <Text>Dashboard</Text>
+                             ? <Ionicons name="ios-home" size={36} color={DefaultColors.gray} />
+                             : <Ionicons name="ios-home-outline" size={36} color={DefaultColors.gray} />
                      ),
                  headerTitle: 'Info-Goods' ,
                  headerStyle: { backgroundColor: DefaultColors.lightBlue }},
