@@ -7,4 +7,5 @@ export const DefaultColors = {
     lightBlue: '#64B5F6',
     black: '#000000',
     white: '#FFFFFF',
+    yellow: '#FDD835',
 }

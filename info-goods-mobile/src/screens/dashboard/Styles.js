@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     },
 
     cardContainer: {
+        paddingLeft: 5,
         flexDirection: 'row',
         marginBottom: 10,
         marginHorizontal: 30,
@@ -52,24 +53,29 @@ export const styles = StyleSheet.create({
     },
 
     noteAndLikeContainer: {
+        marginLeft: 25,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
     },
 
     nota : {
-        textAlign: 'center'
+        fontSize: 16
     },
 
     likes : {
-        textAlign: 'center'
+        fontSize: 16
     },
 
     likeContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
         flex: 0.5
     },
 
     notaContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
         flex: 0.5
     }
 });
