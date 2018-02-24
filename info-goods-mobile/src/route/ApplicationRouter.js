@@ -5,6 +5,8 @@ import Login from '../screens/login/Login';
 import SignUp from '../screens/register/SignUp';
 import Dashboard from '../screens/dashboard/Dashboard';
 import {DefaultColors} from '../utility/GlobalStyles';
+import { Text } from 'react-native';
+import { EvilIcons, FontAwesome } from '@expo/vector-icons';
 
 
 /**
@@ -84,7 +86,18 @@ export const createSignedInStack = () => {
 export const createSignedInNavigator = () => {
     return TabNavigator(
         {
-             Dashboard : { screen: Dashboard ,  navigationOptions: { headerTitle: 'Info-Goods' , headerStyle: { backgroundColor: DefaultColors.lightBlue }}},
+             Dashboard : {
+                 screen: Dashboard ,
+                 navigationOptions: {
+                     tabBarIcon: ({ focused }) => (
+                         focused //TODO AJUSTAR PARA MOSTRAR ICONE DA TAB
+                             ? <Text>Dashboard</Text>
+                             : <Text>Dashboard</Text>
+                     ),
+                 headerTitle: 'Info-Goods' ,
+                 headerStyle: { backgroundColor: DefaultColors.lightBlue }},
+                 tabBarOnPress: (scene) => console.log('clicou'),
+             },
         },
         {
             tabBarOptions: {

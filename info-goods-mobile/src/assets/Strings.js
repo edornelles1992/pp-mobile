@@ -16,5 +16,6 @@ export const strings = {
         password: 'Senha',
         confirmPassword: 'Confirmar Senha',
         signUp: 'Cadastrar',
+        hotTitle: 'Postagens em alta',
     },
-}
+};

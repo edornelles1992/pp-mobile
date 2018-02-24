@@ -4,6 +4,7 @@ import {styles} from './Styles';
 import PostingService from '../../services/PostingService';
 import { EvilIcons, FontAwesome } from '@expo/vector-icons';
 import {DefaultColors} from "../../utility/GlobalStyles";
+import {strings} from '../../assets/Strings';
 /**
  * class of the Dashboard screen, show recent posts based
  * on theirs likes
@@ -13,9 +14,9 @@ export default class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            postings : [],
-            errorDataMessage : ''
-        }
+            postings: [],
+            errorDataMessage: ''
+        };
 
         this.fetchHotPosts();
     }
@@ -29,7 +30,7 @@ export default class Dashboard extends Component {
         } else {
             return (
                 <View style={styles.mainContainer}>
-                    <Text style={styles.title}>Postagens em Alta</Text>
+                    <Text style={styles.title}>{strings.labels.hotTitle}</Text>
                     <FlatList
                         keyboardShouldPersistTaps={'always'}
                         data={this.state.postings}
