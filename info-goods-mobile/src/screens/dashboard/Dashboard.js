@@ -5,6 +5,7 @@ import PostingService from '../../services/PostingService';
 import { EvilIcons, FontAwesome } from '@expo/vector-icons';
 import {DefaultColors} from "../../utility/GlobalStyles";
 import {strings} from '../../assets/Strings';
+import PostCard from '../../components/postCard/PostCard';
 /**
  * class of the Dashboard screen, show recent posts based
  * on theirs likes
@@ -36,27 +37,13 @@ export default class Dashboard extends Component {
                         data={this.state.postings}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => (
-                            <TouchableOpacity style = {styles.cardContainer} onPress = {() => this.goToDetailsProduct(item)}>
-                                <Image height = {30} resizeMode = {'contain'} style={styles.image} source={{ uri: 'data:image/jpg;base64,' + item.produto.foto}}/>
-                                <View style = { styles.descriptionContainer}>
-                                    <View style = { styles.titleContainer}>
-                                        <Text style = { styles.cardTitle }>{item.produto.nome}</Text>
-                                    </View>
-                                    <View style = { styles.nameContainer }>
-                                        <Text style = { styles.name }>{item.user.nome}</Text>
-                                    </View>
-                                    <View style = { styles.noteAndLikeContainer }>
-                                        <View style = { styles.likeContainer}>
-                                            <EvilIcons name="like" size={36} color={DefaultColors.lightBlue} />
-                                            <Text style = { styles.likes }>{item.curtidas}</Text>
-                                        </View>
-                                        <View style = { styles.notaContainer}>
-                                            <FontAwesome name="star" size={26} color={DefaultColors.yellow} />
-                                            <Text style = { styles.nota }> {item.produto.nota}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
+                                <PostCard item = {item}
+                                          photo = {item.produto.foto}
+                                          name = {item.user.nome}
+                                          itemName = {item.produto.nome}
+                                          likes = {item.curtidas}
+                                          note = {item.produto.nota}
+                                          isAddPost = {false}/>
                         )}
                     />
                 </View>
@@ -83,10 +70,4 @@ export default class Dashboard extends Component {
        }
     }
 
-    /**
-     * method to navigate to selected product.
-     */
-    goToDetailsProduct(item) {
-        console.log("entrando na detalhes do produto")
-    }
 }

@@ -6,6 +6,7 @@ import { EvilIcons, FontAwesome } from '@expo/vector-icons';
 import {DefaultColors} from "../../utility/GlobalStyles";
 import {strings} from '../../assets/Strings';
 import SearchBar from 'react-native-material-design-searchbar';
+import PostCard from "../../components/postCard/PostCard";
 /**
  * class of the SearchProduct screen, allow the user
  * to seacrh fort posts on a specific product.
@@ -32,8 +33,11 @@ export default class SearchProduct extends Component {
                     autoCorrect={false}
                     padding={5}
                     returnKeyType={'search'}
-                    placeholder={'informe o nome do produto...'}
+                    placeholder={'Informe o nome do produto...'}
                 />
+            <View style = {styles.resultContainer}>
+                <PostCard isAddPost = {true}/>
+            </View>
             </View>
         );
     }

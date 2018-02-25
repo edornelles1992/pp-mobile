@@ -6,4 +6,9 @@ export const styles = StyleSheet.create({
         flex: 1 ,
         backgroundColor: DefaultColors.white
     },
+
+    resultContainer: {
+        flex: 1 ,
+        backgroundColor: DefaultColors.white
+    }
 });

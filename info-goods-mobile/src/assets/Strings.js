@@ -17,5 +17,6 @@ export const strings = {
         confirmPassword: 'Confirmar Senha',
         signUp: 'Cadastrar',
         hotTitle: 'Postagens em alta',
+        addPost: 'Adicionar Postagem',
     },
 };

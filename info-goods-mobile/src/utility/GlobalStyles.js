@@ -9,4 +9,5 @@ export const DefaultColors = {
     white: '#FFFFFF',
     yellow: '#FDD835',
     gray: '#607D8B',
+    lightGray: '#CFD8DC'
 }
