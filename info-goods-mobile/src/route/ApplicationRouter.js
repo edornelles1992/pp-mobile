@@ -4,6 +4,7 @@ import Introduction from '../screens/introduction/Introduction';
 import Login from '../screens/login/Login';
 import SignUp from '../screens/register/SignUp';
 import Dashboard from '../screens/dashboard/Dashboard';
+import SearchProduct from '../screens/searchProduct/SearchProduct';
 import {DefaultColors} from '../utility/GlobalStyles';
 import { Text } from 'react-native';
 import { EvilIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
@@ -98,6 +99,18 @@ export const createSignedInNavigator = () => {
                  headerStyle: { backgroundColor: DefaultColors.lightBlue }},
                  tabBarOnPress: (scene) => console.log('clicou'),
              },
+            SearchProduct : {
+                screen: SearchProduct ,
+                navigationOptions: {
+                    tabBarIcon: ({ focused }) => (
+                        focused //TODO AJUSTAR PARA MOSTRAR ICONE DA TAB
+                            ? <Ionicons name="ios-search" size={36} color={DefaultColors.gray} />
+                            : <Ionicons name="ios-search-outline" size={36} color={DefaultColors.gray} />
+                    ),
+                    headerTitle: 'Info-Goods' ,
+                    headerStyle: { backgroundColor: DefaultColors.lightBlue }},
+                tabBarOnPress: (scene) => console.log('clicou'),
+            },
         },
         {
             tabBarOptions: {
