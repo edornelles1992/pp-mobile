@@ -5,3 +5,5 @@ npm-debug.*
 .idea
 .idea/
 ../.idea/
+../node_modules/
+../.idea/workspace.xml
