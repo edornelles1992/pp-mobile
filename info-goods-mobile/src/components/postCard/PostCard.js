@@ -9,7 +9,7 @@ import {StyleSheet} from "react-native";
  * Componente class, used to create a card of a post or
  * a simple add Post card.
  * props that is needed to populate postCardInfo: (photo, itemName, name, likes, note)
- * prop that sign if is a AddNewPost ou a PostCardInfo: boolean isAddPost
+ * prop that sign if is a AddNewPost ou a PostCardInfo: boolean isAddPost.
  */
 export default class PostCard extends Component {
 
