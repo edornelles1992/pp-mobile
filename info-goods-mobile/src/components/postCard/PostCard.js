@@ -49,9 +49,9 @@ export default class PostCard extends Component {
             return (
                 <TouchableOpacity style={styles.newPostContainer} onPress={() => this.goToCreatePost()}>
                     <View style = {{ flex: 1 }}>
-                        <Text style = {{ textAlign: 'center', fontSize: 20}}>{strings.labels.addPost}</Text>
+                        <Text style = {styles.addPostText}>{strings.labels.addPost}</Text>
                     </View>
-                    <View style = {{ flex: 0.4, backgroundColor: DefaultColors.lightBlue, alignItems: 'center', paddingVertical: 10}}>
+                    <View style = {styles.addPostIcon}>
                         <Entypo name="plus" size={60} color={DefaultColors.white}/>
                     </View>
                 </TouchableOpacity>
@@ -151,4 +151,16 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 0.5
     },
+
+    addPostText: {
+        textAlign: 'center',
+        fontSize: 20
+    },
+
+    addPostIcon: {
+        flex: 0.4,
+        backgroundColor: DefaultColors.lightBlue,
+        alignItems: 'center',
+        paddingVertical: 0
+    }
 });
