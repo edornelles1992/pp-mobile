@@ -59,6 +59,8 @@ export default class SearchProduct extends Component {
      */
     async findProduct(text) {
 
+        if(text.length === 0) return;
+
         let postings = await PostingService.getPostsByTerm(text);
         console.log(postings);
         this.setState({
