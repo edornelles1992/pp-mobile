@@ -3,6 +3,7 @@ export const strings = {
     errors: {
         noUserFoundOrInvalidPassword : 'Usuário inexistente ou senha inválida.',
         genericError: 'Erro inesperado. Tente novamente.',
+        noPostWasFound: 'Nenhuma postagem foi encontrada!',
 
     },
 
@@ -18,5 +19,8 @@ export const strings = {
         signUp: 'Cadastrar',
         hotTitle: 'Postagens em alta',
         addPost: 'Adicionar Postagem',
+        informProductName: 'Informe o nome do produto...',
+        searchForPostAboutProduct: 'Procure acima por postagens sobre um produto de sua escolha!',
+        beFirstToPost: 'Caso não encontre nenhuma postagem util, faça a sua!',
     },
 };

@@ -17,12 +17,14 @@ export default class SearchProduct extends Component {
         super(props);
         this.state = {
             postings: [],
-            message: ''
+            topMessage: strings.labels.searchForPostAboutProduct,
+            bottomMessage: strings.labels.beFirstToPost
         };
 
     }
 
     render() {
+
         return (
             <View style = {styles.mainContainer}>
                 <SearchBar
@@ -32,17 +34,21 @@ export default class SearchProduct extends Component {
                     onBlur={() => console.log('On Blur')}
                     autoCorrect={false}
                     padding={5}
-                    returnKeyType={'search'}
-                    placeholder={'Informe o nome do produto...'}
+                    placeholder={strings.labels.informProductName}
                 />
-            <View style = {styles.resultContainer}>
-                {this.renderList()}
+                <View style = {styles.topTextContainer}>
+                    <Text style = {styles.textTopMessage}>{this.state.topMessage}</Text>
+                </View>
+                <View style = {styles.resultContainer}>
+                    {this.renderList()}
+                </View>
+                <View style = {styles.bottomTextContainer}>
+                    <Text style = {styles.textBottomMessage}>{this.state.bottomMessage}</Text>
+                </View>
                 <PostCard isAddPost = {true}/>
-            </View>
             </View>
         );
     }
-
 
     /**
      * method to call the service that find the products
@@ -53,18 +59,20 @@ export default class SearchProduct extends Component {
      */
     async findProduct(text) {
 
-        if (text.length >= 1) {
-            let postings = await PostingService.getPostsByTerm(text);
-            console.log(postings);
-            this.setState({
-                postings: postings
-            })
-        }
+        let postings = await PostingService.getPostsByTerm(text);
+        console.log(postings);
+        this.setState({
+            postings: postings
+        })
     }
 
+    /**
+     * method to render the list with the found posts
+     * or a message to inform user that no posts was founded.
+     * @returns {*}
+     */
     renderList() {
-        //TODO VER COMO FAZER QUANDO NAO ENCONTRAR RESULTADOS E VER OQ MOSTRAR NA PRIMEIRA VEZ Q ENTRAR
-        if (this.state.postings !== [] || this.state.postings.length > 0) {
+        if (!!this.state.postings && (this.state.postings !== [] || this.state.postings.length > 0)) {
 
             return (
                 <FlatList
@@ -82,7 +90,10 @@ export default class SearchProduct extends Component {
                     )}
                 />
             );
-
+        } else {
+            return (
+                <Text style={styles.noPostFoundText}>{strings.errors.noPostWasFound}</Text>
+            );
         }
     }
 }

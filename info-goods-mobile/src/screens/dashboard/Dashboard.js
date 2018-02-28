@@ -46,6 +46,7 @@ export default class Dashboard extends Component {
                                           isAddPost = {false}/>
                         )}
                     />
+                    <PostCard isAddPost = {true}/>
                 </View>
             );
         }
